@@ -34,10 +34,9 @@ jobs:
           echo "MONGO_DB_USERNAME: $MONGODB_USERNAME"
   deploy:
     needs: test
-    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Output information
         run: |        
-          echo "MONGO_DB_USERNAME: ${{ env.MONGODB_USERNAME }} "
+          echo "MONGO_DB_USERNAME: ${{ secrets.MONGODB_USERNAME }} "
           echo "MONGODB_NAME: $MONGODB_DB_NAME"
